@@ -1,0 +1,9 @@
+{
+  "name": "avishka-portfolio",
+  "private": true,
+  "scripts": {
+    "admin": "node admin/server.mjs",
+    "test": "node --test admin/server.test.mjs"
+  },
+  "engines": { "node": ">=22" }
+}

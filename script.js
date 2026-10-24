@@ -1,16 +1,8 @@
 /*
-  YOUR CONTACT DETAILS
-  --------------------
-  Replace the empty values below. The LinkedIn, GitHub, email buttons,
-  and contact form will start working automatically.
+  Contact details and rotating roles are managed through the local admin.
+  The settings are stored in index.html so static hosting needs no backend.
 */
-const portfolioConfig = {
-  email: 'harshanaavishka7@gmail.com',
-  linkedin: 'https://www.linkedin.com/in/avishka-harshana/',
-  github: 'https://github.com/avishkawijewardhana',
-  phone: 'tel:+94705586021',
-  whatsapp: 'https://api.whatsapp.com/send/?phone=94705586021&text&type=phone_number&app_absent=0'
-};
+const portfolioConfig = JSON.parse(document.getElementById('portfolio-settings').textContent);
 
 /* Keep all portfolio behaviour safely inside one private function. */
 (() => {
@@ -185,15 +177,9 @@ const portfolioConfig = {
 
   /* 6. ROTATING JOB-TITLE TYPEWRITER */
   const roleText = query('#role-text');
-  const roles = [
-    'Full-Stack Developer',
-    'UI/UX Designer',
-    'Video Editor',
-    'Graphic Designer',
-    'Creative Technologist'
-  ];
+  const roles = portfolioConfig.roles?.filter(role => role.trim()) || [];
 
-  if (roleText && !reducedMotion) {
+  if (roleText && roles.length && !reducedMotion) {
     let roleIndex = 0;
     let letterIndex = roles[0].length;
     let deleting = true;
