@@ -2430,3 +2430,6 @@ footer {
   .reveal { opacity: 1; transform: none; }
   .intro-screen { display: none; }
 }
+
+/* Keep the complete wide TrustMart banner visible in the existing card layout. */
+.project-trustmart .project-image { object-fit: contain; background: #edf5f3; }

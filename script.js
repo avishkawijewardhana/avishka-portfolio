@@ -266,6 +266,7 @@ const portfolioConfig = JSON.parse(document.getElementById('portfolio-settings')
 
   let projectGalleryImages = [];
   let projectGalleryIndex = 0;
+  let projectGalleryFit = 'cover';
 
   /* Display the currently selected gallery image. */
   const showProjectGalleryImage = () => {
@@ -286,7 +287,7 @@ const portfolioConfig = JSON.parse(document.getElementById('portfolio-settings')
         : '';
 
       dialogMedia.style.backgroundSize = hasImage
-        ? 'cover'
+        ? projectGalleryFit
         : '';
 
       dialogMedia.style.backgroundPosition = hasImage
@@ -361,6 +362,7 @@ const portfolioConfig = JSON.parse(document.getElementById('portfolio-settings')
           ? [fallbackImage]
           : [];
 
+      projectGalleryFit = card.dataset.projectImageFit === 'contain' ? 'contain' : 'cover';
       projectGalleryIndex = 0;
 
       const visualClass = Array.from(cardVisual?.classList || []).find(

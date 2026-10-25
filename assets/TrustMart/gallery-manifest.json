@@ -1,0 +1,454 @@
+[
+  {
+    "file": "trustmart-01-project-showcase.png",
+    "title": "Project showcase",
+    "width": 1600,
+    "height": 600,
+    "sources": [
+      "web-browse",
+      "app-search",
+      "moderator-dashboard"
+    ],
+    "alt": "TrustMart — Project showcase; actual interface with demo data."
+  },
+  {
+    "file": "trustmart-02-web-home.png",
+    "title": "Marketplace home",
+    "width": 1600,
+    "height": 600,
+    "sources": [
+      "web-home"
+    ],
+    "alt": "TrustMart — Marketplace home; actual interface with demo data."
+  },
+  {
+    "file": "trustmart-03-web-browse.png",
+    "title": "Browse & search",
+    "width": 1600,
+    "height": 600,
+    "sources": [
+      "web-browse"
+    ],
+    "alt": "TrustMart — Browse & search; actual interface with demo data."
+  },
+  {
+    "file": "trustmart-04-web-categories.png",
+    "title": "Product categories",
+    "width": 1600,
+    "height": 600,
+    "sources": [
+      "web-categories"
+    ],
+    "alt": "TrustMart — Product categories; actual interface with demo data."
+  },
+  {
+    "file": "trustmart-05-web-product-detail.png",
+    "title": "Product details",
+    "width": 1600,
+    "height": 600,
+    "sources": [
+      "web-product-detail"
+    ],
+    "alt": "TrustMart — Product details; actual interface with demo data."
+  },
+  {
+    "file": "trustmart-06-web-login.png",
+    "title": "Account access",
+    "width": 1600,
+    "height": 600,
+    "sources": [
+      "web-login"
+    ],
+    "alt": "TrustMart — Account access; actual interface with demo data."
+  },
+  {
+    "file": "trustmart-07-web-register.png",
+    "title": "Join the marketplace",
+    "width": 1600,
+    "height": 600,
+    "sources": [
+      "web-register"
+    ],
+    "alt": "TrustMart — Join the marketplace; actual interface with demo data."
+  },
+  {
+    "file": "trustmart-08-web-buyer-orders.png",
+    "title": "Buyer orders",
+    "width": 1600,
+    "height": 600,
+    "sources": [
+      "web-buyer-orders"
+    ],
+    "alt": "TrustMart — Buyer orders; actual interface with demo data."
+  },
+  {
+    "file": "trustmart-09-web-messages.png",
+    "title": "Messaging",
+    "width": 1600,
+    "height": 600,
+    "sources": [
+      "web-messages"
+    ],
+    "alt": "TrustMart — Messaging; actual interface with demo data."
+  },
+  {
+    "file": "trustmart-10-web-notifications.png",
+    "title": "Notifications",
+    "width": 1600,
+    "height": 600,
+    "sources": [
+      "web-notifications"
+    ],
+    "alt": "TrustMart — Notifications; actual interface with demo data."
+  },
+  {
+    "file": "trustmart-11-web-seller-dashboard.png",
+    "title": "Seller workspace",
+    "width": 1600,
+    "height": 600,
+    "sources": [
+      "web-seller-dashboard"
+    ],
+    "alt": "TrustMart — Seller workspace; actual interface with demo data."
+  },
+  {
+    "file": "trustmart-12-web-create-listing.png",
+    "title": "Create a listing",
+    "width": 1600,
+    "height": 600,
+    "sources": [
+      "web-create-listing"
+    ],
+    "alt": "TrustMart — Create a listing; actual interface with demo data."
+  },
+  {
+    "file": "trustmart-13-web-verifications.png",
+    "title": "Verification queue",
+    "width": 1600,
+    "height": 600,
+    "sources": [
+      "web-verifications"
+    ],
+    "alt": "TrustMart — Verification queue; actual interface with demo data."
+  },
+  {
+    "file": "trustmart-14-web-disputes.png",
+    "title": "Dispute management",
+    "width": 1600,
+    "height": 600,
+    "sources": [
+      "web-disputes"
+    ],
+    "alt": "TrustMart — Dispute management; actual interface with demo data."
+  },
+  {
+    "file": "trustmart-15-web-admin-overview.png",
+    "title": "Platform overview",
+    "width": 1600,
+    "height": 600,
+    "sources": [
+      "web-admin-overview"
+    ],
+    "alt": "TrustMart — Platform overview; actual interface with demo data."
+  },
+  {
+    "file": "trustmart-16-web-admin-users.png",
+    "title": "User administration",
+    "width": 1600,
+    "height": 600,
+    "sources": [
+      "web-admin-users"
+    ],
+    "alt": "TrustMart — User administration; actual interface with demo data."
+  },
+  {
+    "file": "trustmart-17-web-admin-listings.png",
+    "title": "Listing administration",
+    "width": 1600,
+    "height": 600,
+    "sources": [
+      "web-admin-listings"
+    ],
+    "alt": "TrustMart — Listing administration; actual interface with demo data."
+  },
+  {
+    "file": "trustmart-18-web-admin-reports.png",
+    "title": "Reports & analytics",
+    "width": 1600,
+    "height": 600,
+    "sources": [
+      "web-admin-reports"
+    ],
+    "alt": "TrustMart — Reports & analytics; actual interface with demo data."
+  },
+  {
+    "file": "trustmart-19-web-admin-revenue.png",
+    "title": "Revenue overview",
+    "width": 1600,
+    "height": 600,
+    "sources": [
+      "web-admin-revenue"
+    ],
+    "alt": "TrustMart — Revenue overview; actual interface with demo data."
+  },
+  {
+    "file": "trustmart-20-app-welcome.png",
+    "title": "Welcome to TrustMart",
+    "width": 1600,
+    "height": 600,
+    "sources": [
+      "app-welcome"
+    ],
+    "alt": "TrustMart — Welcome to TrustMart; actual interface with demo data."
+  },
+  {
+    "file": "trustmart-21-app-login.png",
+    "title": "Sign in on Android",
+    "width": 1600,
+    "height": 600,
+    "sources": [
+      "app-login"
+    ],
+    "alt": "TrustMart — Sign in on Android; actual interface with demo data."
+  },
+  {
+    "file": "trustmart-22-app-buyer-home.png",
+    "title": "Buyer home",
+    "width": 1600,
+    "height": 600,
+    "sources": [
+      "app-buyer-home"
+    ],
+    "alt": "TrustMart — Buyer home; actual interface with demo data."
+  },
+  {
+    "file": "trustmart-23-app-search.png",
+    "title": "Search & discovery",
+    "width": 1600,
+    "height": 600,
+    "sources": [
+      "app-search"
+    ],
+    "alt": "TrustMart — Search & discovery; actual interface with demo data."
+  },
+  {
+    "file": "trustmart-24-app-product-detail.png",
+    "title": "Inspect a product",
+    "width": 1600,
+    "height": 600,
+    "sources": [
+      "app-product-detail"
+    ],
+    "alt": "TrustMart — Inspect a product; actual interface with demo data."
+  },
+  {
+    "file": "trustmart-25-app-checkout.png",
+    "title": "Checkout review",
+    "width": 1600,
+    "height": 600,
+    "sources": [
+      "app-checkout"
+    ],
+    "alt": "TrustMart — Checkout review; actual interface with demo data."
+  },
+  {
+    "file": "trustmart-26-app-demo-payment.png",
+    "title": "Simulated payment",
+    "width": 1600,
+    "height": 600,
+    "sources": [
+      "app-demo-payment"
+    ],
+    "alt": "TrustMart — Simulated payment; actual interface with demo data."
+  },
+  {
+    "file": "trustmart-27-app-orders.png",
+    "title": "My orders",
+    "width": 1600,
+    "height": 600,
+    "sources": [
+      "app-orders"
+    ],
+    "alt": "TrustMart — My orders; actual interface with demo data."
+  },
+  {
+    "file": "trustmart-28-app-order-tracking.png",
+    "title": "Order tracking",
+    "width": 1600,
+    "height": 600,
+    "sources": [
+      "app-order-tracking"
+    ],
+    "alt": "TrustMart — Order tracking; actual interface with demo data."
+  },
+  {
+    "file": "trustmart-29-app-profile.png",
+    "title": "Account profile",
+    "width": 1600,
+    "height": 600,
+    "sources": [
+      "app-profile"
+    ],
+    "alt": "TrustMart — Account profile; actual interface with demo data."
+  },
+  {
+    "file": "trustmart-30-app-seller-home.png",
+    "title": "Seller home",
+    "width": 1600,
+    "height": 600,
+    "sources": [
+      "app-seller-home"
+    ],
+    "alt": "TrustMart — Seller home; actual interface with demo data."
+  },
+  {
+    "file": "trustmart-31-app-seller-listings.png",
+    "title": "My listings",
+    "width": 1600,
+    "height": 600,
+    "sources": [
+      "app-seller-listings"
+    ],
+    "alt": "TrustMart — My listings; actual interface with demo data."
+  },
+  {
+    "file": "trustmart-32-app-create-listing.png",
+    "title": "New listing",
+    "width": 1600,
+    "height": 600,
+    "sources": [
+      "app-create-listing"
+    ],
+    "alt": "TrustMart — New listing; actual interface with demo data."
+  },
+  {
+    "file": "trustmart-33-moderator-login.png",
+    "title": "Moderator access",
+    "width": 1600,
+    "height": 600,
+    "sources": [
+      "moderator-login"
+    ],
+    "alt": "TrustMart — Moderator access; actual interface with demo data."
+  },
+  {
+    "file": "trustmart-34-moderator-dashboard.png",
+    "title": "Moderation dashboard",
+    "width": 1600,
+    "height": 600,
+    "sources": [
+      "moderator-dashboard"
+    ],
+    "alt": "TrustMart — Moderation dashboard; actual interface with demo data."
+  },
+  {
+    "file": "trustmart-35-moderator-verifications.png",
+    "title": "Listing verification",
+    "width": 1600,
+    "height": 600,
+    "sources": [
+      "moderator-verifications"
+    ],
+    "alt": "TrustMart — Listing verification; actual interface with demo data."
+  },
+  {
+    "file": "trustmart-36-moderator-verification-detail.png",
+    "title": "Review a submission",
+    "width": 1600,
+    "height": 600,
+    "sources": [
+      "moderator-verification-detail"
+    ],
+    "alt": "TrustMart — Review a submission; actual interface with demo data."
+  },
+  {
+    "file": "trustmart-37-moderator-disputes.png",
+    "title": "Dispute queue",
+    "width": 1600,
+    "height": 600,
+    "sources": [
+      "moderator-disputes"
+    ],
+    "alt": "TrustMart — Dispute queue; actual interface with demo data."
+  },
+  {
+    "file": "trustmart-38-moderator-dispute-detail.png",
+    "title": "Resolve a dispute",
+    "width": 1600,
+    "height": 600,
+    "sources": [
+      "moderator-dispute-detail"
+    ],
+    "alt": "TrustMart — Resolve a dispute; actual interface with demo data."
+  },
+  {
+    "file": "trustmart-39-moderator-chat.png",
+    "title": "Moderator conversations",
+    "width": 1600,
+    "height": 600,
+    "sources": [
+      "moderator-chat"
+    ],
+    "alt": "TrustMart — Moderator conversations; actual interface with demo data."
+  },
+  {
+    "file": "trustmart-40-moderator-profile.png",
+    "title": "Moderator profile",
+    "width": 1600,
+    "height": 600,
+    "sources": [
+      "moderator-profile"
+    ],
+    "alt": "TrustMart — Moderator profile; actual interface with demo data."
+  },
+  {
+    "file": "trustmart-41-moderator-notifications.png",
+    "title": "Moderation updates",
+    "width": 1600,
+    "height": 600,
+    "sources": [
+      "moderator-notifications"
+    ],
+    "alt": "TrustMart — Moderation updates; actual interface with demo data."
+  },
+  {
+    "file": "trustmart-42-app-chat.png",
+    "title": "Conversations",
+    "width": 1600,
+    "height": 600,
+    "sources": [
+      "app-chat"
+    ],
+    "alt": "TrustMart — Conversations; actual interface with demo data."
+  },
+  {
+    "file": "trustmart-43-app-notifications.png",
+    "title": "Marketplace updates",
+    "width": 1600,
+    "height": 600,
+    "sources": [
+      "app-notifications"
+    ],
+    "alt": "TrustMart — Marketplace updates; actual interface with demo data."
+  },
+  {
+    "file": "trustmart-44-app-categories.png",
+    "title": "Browse categories",
+    "width": 1600,
+    "height": 600,
+    "sources": [
+      "app-categories"
+    ],
+    "alt": "TrustMart — Browse categories; actual interface with demo data."
+  },
+  {
+    "file": "trustmart-45-app-register.png",
+    "title": "Create an account",
+    "width": 1600,
+    "height": 600,
+    "sources": [
+      "app-register"
+    ],
+    "alt": "TrustMart — Create an account; actual interface with demo data."
+  }
+]

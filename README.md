@@ -14,6 +14,8 @@ The dashboard manages home/about/contact text, images, links, page title and sea
 
 Uploads support PNG, JPG, WebP, GIF and PDF up to 10 MB. Copy the uploaded path into an image/gallery/link field. Uploads save immediately to `assets/uploads/`; content saves to `index.html`. Unused uploads can be removed manually after verifying that nothing references them.
 
+For project galleries, use **Choose gallery images (select multiple)** directly inside the project editor. Selected images upload and join the gallery automatically; thumbnails let you reorder or remove them without typing paths. **Choose replacement image** uploads a cover/portrait image directly into its image field. Click **Save to project** after uploading. Gallery removal removes the reference, not the uploaded file. Manual gallery paths remain available under **Advanced**.
+
 For skill icons, paste a complete `<svg>...</svg>` into **SVG icon code**, click **Apply SVG icon**, check the icon preview, then **Save to project**. Existing SVG code is available for editing. Static SVG paths, shapes, gradients and clipping are supported; scripts, styles and external references are rejected. Use `fill` and `stroke` attributes for colors. You can also replace an icon with text or an emoji.
 
 ## Publish updates

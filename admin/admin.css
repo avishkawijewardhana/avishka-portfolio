@@ -3,3 +3,9 @@
 .skill-icon-preview .skill-icon{display:inline-flex;align-items:center;justify-content:center;width:40px;height:40px;font-size:24px}
 .skill-icon-preview svg,.skill-icon-preview img{width:32px;height:32px;object-fit:contain}
 textarea[aria-invalid="true"]{border-color:#ffadad}
+.gallery-editor{display:grid;grid-template-columns:repeat(auto-fill,minmax(160px,1fr));gap:14px}
+.gallery-tile{min-width:0;border:1px solid #35435b;border-radius:8px;padding:10px;background:#0b1320}
+.gallery-tile img{display:block;width:100%;height:115px;object-fit:contain;background:#172337;border-radius:5px}
+.gallery-tile>span{display:block;margin:10px 0;font-size:12px;overflow-wrap:anywhere;color:#a9bad1}
+.gallery-tile button{font-size:12px;padding:6px 9px}
+details>summary{cursor:pointer;color:#a9bad1;font-size:13px;margin:10px 0}

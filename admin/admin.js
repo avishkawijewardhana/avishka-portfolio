@@ -1,6 +1,7 @@
 'use strict';
 const $ = selector => document.querySelector(selector);
 let doc, revision, token, settings, dirty = false, active = 'home';
+let uploading = false;
 const templates = {};
 const collections = {
   skills: { card: '.skill-card', parent: '#skill-grid', name: 'skill' },
@@ -76,12 +77,76 @@ function contentFields(root, parent) {
     field(parent, title, node.textContent.trim(), value => { node.textContent = leading + value + trailing; }, node.textContent.trim().length > 95);
   }
   for (const image of root.querySelectorAll('img')) {
-    field(parent, 'Image path or URL', image.getAttribute('src'), value => image.setAttribute('src', value));
+    const pathInput = field(parent, 'Image path or URL (optional manual entry)', image.getAttribute('src'), value => image.setAttribute('src', value));
     field(parent, 'Image description (alt text)', image.alt, value => image.alt = value);
+    imageUpload(parent, 'Choose replacement image', false, path => { image.setAttribute('src', path); pathInput.value = path; });
   }
   for (const link of root.querySelectorAll('a[href]')) {
     field(parent, `Link: ${link.textContent.trim().slice(0, 45) || link.getAttribute('aria-label') || 'URL'}`, link.getAttribute('href'), value => link.setAttribute('href', value));
   }
+}
+function imageUpload(parent, title, multiple, onUploaded) {
+  const label = element('label', title, 'wide');
+  const picker = element('input'); picker.type = 'file'; picker.multiple = multiple;
+  picker.accept = '.png,.jpg,.jpeg,.webp,.gif';
+  const feedback = element('p', 'PNG, JPG, WebP or GIF. Up to 10 MB per image.', 'hint wide');
+  feedback.setAttribute('role', 'status'); label.append(picker); parent.append(label, feedback);
+  picker.onchange = async () => {
+    const files = [...picker.files]; if (!files.length || uploading) return;
+    const invalid = files.find(file => !/\.(png|jpe?g|webp|gif)$/i.test(file.name) || !file.size || file.size > 10 * 1024 * 1024);
+    if (invalid) { feedback.textContent = `${invalid.name}: choose a supported image between 1 byte and 10 MB. No files were uploaded.`; picker.value = ''; return; }
+    uploading = true;
+    $('#editor').inert = true; $('#navigation').inert = true;
+    $('#save').disabled = true; $('#preview').disabled = true;
+    let completed = 0;
+    try {
+      for (const file of files) {
+        feedback.textContent = `Uploading ${completed + 1} of ${files.length}: ${file.name}`;
+        const base64 = await new Promise((resolve, reject) => {
+          const reader = new FileReader(); reader.onload = () => resolve(reader.result.split(',')[1]);
+          reader.onerror = () => reject(new Error(`Could not read ${file.name}.`)); reader.readAsDataURL(file);
+        });
+        const result = await request('/api/upload', { name: file.name, base64 });
+        onUploaded(result.path); completed++; changed();
+      }
+      feedback.textContent = `${completed} image${completed === 1 ? '' : 's'} added. Click Save to project to keep your changes.`;
+    } catch (error) {
+      feedback.textContent = `${completed} of ${files.length} images added. ${error.message} Select only the remaining files to retry.`;
+      status(feedback.textContent, true);
+    } finally {
+      uploading = false; $('#editor').inert = false; $('#navigation').inert = false;
+      $('#save').disabled = false; $('#preview').disabled = false; picker.value = '';
+    }
+  };
+}
+function projectGallery(card, parent) {
+  const gallery = element('div', '', 'gallery-editor wide');
+  const paths = () => (card.dataset.projectImages || '').split(',').map(path => path.trim()).filter(Boolean);
+  const setPaths = values => { card.dataset.projectImages = values.join(','); manual.value = values.join('\n'); changed(); draw(); };
+  imageUpload(parent, 'Choose gallery images (select multiple)', true, path => setPaths([...paths(), path]));
+  parent.append(gallery);
+  const advanced = element('details', '', 'wide'); advanced.append(element('summary', 'Advanced: enter image paths manually'));
+  parent.append(advanced);
+  const manual = field(advanced, 'Gallery image paths (one per line)', paths().join('\n'), value => {
+    card.dataset.projectImages = value.split('\n').map(path => path.trim()).filter(Boolean).join(','); draw();
+  }, true);
+  function draw() {
+    gallery.replaceChildren(); const images = paths();
+    if (!images.length) gallery.append(element('p', 'No gallery images yet. Choose images above to add them.', 'hint'));
+    images.forEach((path, index) => {
+      const tile = element('div', '', 'gallery-tile');
+      const image = element('img'); image.src = new URL(path, location.origin + '/').href; image.alt = `Gallery image ${index + 1}`; image.loading = 'lazy';
+      tile.append(image, element('span', `${index + 1}. ${path.split('/').pop()}`));
+      const actions = element('div', '', 'actions');
+      const previous = button('←', () => { const next = paths(); [next[index - 1], next[index]] = [next[index], next[index - 1]]; setPaths(next); });
+      previous.setAttribute('aria-label', `Move gallery image ${index + 1} earlier`); previous.disabled = index === 0;
+      const next = button('→', () => { const values = paths(); [values[index + 1], values[index]] = [values[index], values[index + 1]]; setPaths(values); });
+      next.setAttribute('aria-label', `Move gallery image ${index + 1} later`); next.disabled = index === images.length - 1;
+      actions.append(previous, next, button('Remove', () => setPaths(paths().filter((_, position) => position !== index)), 'danger'));
+      tile.append(actions); gallery.append(tile);
+    });
+  }
+  draw();
 }
 function renderCollection(key) {
   const config = collections[key];
@@ -145,7 +210,7 @@ function renderCollection(key) {
       field(fields, 'GitHub URL', card.dataset.projectGithub, value => card.dataset.projectGithub = value);
       field(fields, 'Live demo URL', card.dataset.projectDemo, value => card.dataset.projectDemo = value);
       field(fields, 'Full project description', card.dataset.projectDescription, value => card.dataset.projectDescription = value, true);
-      field(fields, 'Gallery image paths (one per line)', card.dataset.projectImages.split(',').join('\n'), value => card.dataset.projectImages = value.split('\n').map(item => item.trim()).filter(Boolean).join(','), true);
+      projectGallery(card, fields);
       field(fields, 'Technologies (comma separated)', [...card.querySelectorAll('.tag-row span')].map(item => item.textContent).join(', '), value => {
         card.querySelector('.tag-row').replaceChildren(...value.split(',').map(item => item.trim()).filter(Boolean).map(item => { const span = doc.createElement('span'); span.textContent = item; return span; }));
       });
@@ -207,7 +272,7 @@ $('#preview').onclick = () => {
   $('#preview-dialog').showModal();
 };
 $('#close-preview').onclick = () => { $('#preview-dialog').close(); $('#preview-dialog iframe').srcdoc = ''; };
-window.addEventListener('beforeunload', event => { if (dirty) { event.preventDefault(); event.returnValue = ''; } });
+window.addEventListener('beforeunload', event => { if (dirty || uploading) { event.preventDefault(); event.returnValue = ''; } });
 (async () => {
   try {
     const data = await request('/api/content'); revision = data.revision; token = data.token;
